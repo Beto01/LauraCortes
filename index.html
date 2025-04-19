@@ -3,264 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peluquería Laura Cortes | Balayage en Don Benito</title>
-    <meta name="description" content="Peluquería en Don Benito especializada en Balayage. Laura Cortes, experta en coloración y cuidado del cabello.">
-    <meta name="keywords" content="peluquería, Don Benito, Badajoz, Balayage, coloración, cabello, cortes, peinados, tratamientos capilares, Laura Cortes">
+    <title>Laura Cortés - Estilista Profesional</title>
+    <meta name="description" content="Peluquería especializada en melenas largas y cuidado del cabello. Estilo moderno y profesional.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="script.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="#">Laura Cortes Peluquería</a>
+    <header class="main-header centered-header">
+        <div class="logo-container">
+            <a href="index.html" title="Ir a la página de inicio">
+                <img src="imagenes/Logo.jpg" alt="Logo Laura Cortés Estilista" class="logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/E0C9A6/333333?text=Laura+Cortes'; this.style.border='1px solid #ccc';">
+            </a>
         </div>
-        <nav>
+        <nav class="main-nav">
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
                 <li><a href="#servicios">Servicios</a></li>
                 <li><a href="#galeria">Galería</a></li>
-                <li><a href="#testimonios">Testimonios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#cita">Pedir Cita</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="inicio">
-            <div class="inicio-contenido">
-                <div class="inicio-imagen">
-                    <img src="placeholder_balayage.jpg" alt="Balayage destacado" />
-                </div>
-                <div class="inicio-presentacion">
-                    <h1>Tu Especialista en Balayage en Don Benito</h1>
-                    <p>Bienvenida a Peluquería Laura Cortes, un espacio dedicado a realzar tu belleza con las últimas tendencias en coloración, especialmente nuestra especialidad: el Balayage.</p>
-                    <div class="inicio-botones">
-                        <a href="#servicios" class="boton boton-primario">Ver Servicios</a>
-                        <a href="#galeria" class="boton boton-secundario">Ver Galería</a>
-                        <a href="#cita" class="boton boton-cita">Pedir Cita</a>
-                    </div>
-                </div>
+        <section id="hero" class="hero-split">
+            <div class="hero-image-column">
+                <img src="imagenes/Laura1.jpg"
+                     alt="Modelo con peinado de Laura Cortés"
+                     onerror="this.onerror=null; this.src='https://placehold.co/600x800/cccccc/333333?text=Error+Cargando+Imagen';">
+            </div>
+            <div class="hero-content-column">
+                <h1>Laura Cortés Estilista</h1>
+                <p>Especialista en realzar la belleza natural de tu melena. Cuidado experto para cabellos largos y coloraciones.</p>
+                <a href="#galeria" class="btn btn-primary">Ver Galería</a>
             </div>
         </section>
 
-        <section id="sobre-mi">
-            <div class="sobre-mi-contenido">
-                <h2>Sobre Mí</h2>
-                <p>Soy Laura Cortes, una apasionada peluquera con años de experiencia en el mundo de la belleza. Mi especialidad es el Balayage, una técnica que me permite crear looks únicos y personalizados para cada clienta.  Me dedico a resaltar la belleza natural de tu cabello, utilizando las últimas técnicas y productos de la más alta calidad. Mi objetivo es que te sientas radiante y segura de ti misma cada vez que salgas de mi salón.</p>
-                <p>En mi peluquería, encontrarás un ambiente cercano y profesional, donde te brindaré una atención personalizada y te asesoraré para encontrar el estilo que mejor se adapte a ti.  Creo que el cabello es una parte fundamental de nuestra identidad, y me encanta poder ayudar a mis clientas a expresar su personalidad a través de su look.</p>
-            </div>
-        </section>
+        <section id="intro">
+            </section>
 
-        <section id="servicios">
-            <div class="servicios-contenido">
-                <h2>Servicios</h2>
-                <div class="servicio-destacado">
-                    <h3>Balayage: El Arte de la Coloración Natural</h3>
-                    <p>El Balayage es una técnica de coloración francesa que consiste en aplicar el color a mano alzada, creando un efecto degradado muy natural y luminoso.  Es ideal para quienes buscan un cambio de look sutil pero impactante, que aporte luz y movimiento al cabello. En Peluquería Laura Cortes, somos expertas en Balayage, y te ofrecemos una amplia variedad de estilos para que encuentres el que mejor se adapte a ti:</p>
-                    <ul>
-                        <li><strong>Balayage Clásico:</strong> Reflejos sutiles de medios a puntas.</li>
-                        <li><strong>Balayage Californiano:</strong> Un degradado más marcado, con las puntas más claras.</li>
-                        <li><strong>Balayage Ombré:</strong> Un contraste más intenso entre la raíz y las puntas.</li>
-                        <li><strong>Balayage Inverso:</strong> Puntas más oscuras que la raíz.</li>
-                        </ul>
-                    <p>Además de la técnica, es crucial el cuidado del cabello antes y después del tratamiento.  En mi salón, te asesoraré sobre los mejores productos y rutinas para mantener tu Balayage perfecto por más tiempo.</p>
-                    <img src="placeholder_balayage_tipos.jpg" alt="Tipos de Balayage" />
-                </div>
-                <h3>Otros Servicios</h3>
-                <div class="servicios-otros">
-                    <div class="servicio-item">
-                        <h4>Cortes de Mujer</h4>
-                        <p>Cortes de pelo modernos y personalizados, adaptados a tu estilo y tipo de cabello.</p>
-                    </div>
-                    <div class="servicio-item">
-                        <h4>Peinados</h4>
-                        <p>Peinados para todo tipo de ocasiones: eventos especiales, fiestas, bodas, etc.</p>
-                    </div>
-                    <div class="servicio-item">
-                        <h4>Tratamientos Capilares</h4>
-                        <p>Tratamientos de hidratación, nutrición y reparación para un cabello sano y radiante.</p>
-                    </div>
-                    <div class="servicio-item">
-                         <h4>Coloración General</h4>
-                         <p>Servicios de coloración tradicional, incluyendo cobertura de canas y cambios de color.</p>
-                    </div>
-                    </div>
-                <h4>Lista de Precios</h4>
-                    <div class="precios-servicios">
-                        <div class="precio-item">
-                            <p>Balayage (desde)</p>
-                            <p>60€</p>
-                        </div>
-                        <div class="precio-item">
-                            <p>Corte Mujer</p>
-                            <p>25€</p>
-                        </div>
-                         <div class="precio-item">
-                            <p>Peinado</p>
-                            <p>30€</p>
-                        </div>
-                        <div class="precio-item">
-                            <p>Tratamiento Capilar</p>
-                            <p>40€</p>
-                        </div>
-                        <div class="precio-item">
-                            <p>Coloración General (desde)</p>
-                            <p>35€</p>
-                        </div>
-                        </div>
-                    <p class="nota-precios">Los precios son orientativos y pueden variar según la longitud del cabello, la complejidad del trabajo y los productos utilizados.  Te proporcionaremos un presupuesto personalizado antes de comenzar cualquier servicio.</p>
-            </div>
-        </section>
-
-        <section id="galeria">
-            <div class="galeria-contenido">
-                <h2>Galería</h2>
-                <div class="galeria-grid">
-                    <div class="galeria-item">
-                        <img src="placeholder_balayage1.jpg" alt="Trabajo de Balayage 1" data-full-image="placeholder_balayage1_full.jpg">
-                    </div>
-                    <div class="galeria-item">
-                        <img src="placeholder_balayage2.jpg" alt="Trabajo de Balayage 2" data-full-image="placeholder_balayage2_full.jpg">
-                    </div>
-                    <div class="galeria-item">
-                        <img src="placeholder_balayage3.jpg" alt="Trabajo de Balayage 3" data-full-image="placeholder_balayage3_full.jpg">
-                    </div>
-                    <div class="galeria-item">
-                        <img src="placeholder_balayage4.jpg" alt="Trabajo de Balayage 4" data-full-image="placeholder_balayage4_full.jpg">
-                    </div>
-                    <div class="galeria-item">
-                        <img src="placeholder_corte1.jpg" alt="Trabajo de Corte 1" data-full-image="placeholder_corte1_full.jpg">
-                    </div>
-                    <div class="galeria-item">
-                        <img src="placeholder_peinado1.jpg" alt="Trabajo de Peinado 1" data-full-image="placeholder_peinado1_full.jpg">
-                    </div>
-                    </div>
-                <div id="visor-imagen">
-                    <img src="" alt="Imagen Ampliada">
-                    <button id="cerrar-visor">Cerrar</button>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonios">
-            <div class="testimonios-contenido">
-                <h2>Testimonios</h2>
-                <div class="testimonio-item">
-                    <p>"Laura es una gran profesional. Me hizo un Balayage precioso y me asesoró sobre cómo cuidarlo. ¡La recomiendo 100%!"</p>
-                    <p class="nombre-cliente">- María G.</p>
-                </div>
-                <div class="testimonio-item">
-                    <p>"Me encanta mi nuevo look. Laura supo captar lo que quería y el resultado fue espectacular. ¡Gracias!"</p>
-                    <p class="nombre-cliente">- Ana P.</p>
-                </div>
-                </div>
-        </section>
-
-        <section id="contacto">
-            <div class="contacto-contenido">
-                <h2>Contacto</h2>
-                <div class="contacto-info">
-                    <div class="contacto-direccion">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Peluquería Laura Cortes<br>C/ [Nombre de la Calle], [Número]<br>Don Benito, Badajoz</p>
-                        <a href="https://maps.app.goo.gl/..." target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
-                    </div>
-                    <div class="contacto-telefono">
-                        <i class="fas fa-phone"></i>
-                        <p><a href="tel:+34[Número de Teléfono]">+34 [Número de Teléfono]</a></p>
-                    </div>
-                    <div class="contacto-horario">
-                        <i class="far fa-clock"></i>
-                        <p>Horario de Atención:<br>Lunes a Viernes: 9:00 - 14:00 y 16:00 - 20:00<br>Sábados: 9:00 - 14:00</p>
-                    </div>
-                    <div class="contacto-instagram">
-                        <i class="fab fa-instagram"></i>
-                        <p><a href="https://www.instagram.com/laura_cortes_m/" target="_blank" rel="noopener noreferrer">@laura_cortes_m</a></p>
-                    </div>
-                </div>
-                <form id="formulario-contacto" action="enviar_correo.php" method="post">
-                    <div class="form-grupo">
-                        <label for="nombre">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="form-grupo">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-grupo">
-                        <label for="mensaje">Mensaje:</label>
-                        <textarea id="mensaje" name="mensaje" required></textarea>
-                    </div>
-                    <button type="submit" class="boton boton-primario">Enviar Mensaje</button>
-                </form>
-            </div>
-        </section>
-
-        <section id="cita">
-            <div class="cita-contenido">
-                <h2>Pedir Cita</h2>
-                <p>Para pedir cita, puedes llamarnos al <a href="tel:+34[Número de Teléfono]">+34 [Número de Teléfono]</a>, enviarnos un mensaje por WhatsApp al mismo número, o contactarnos a través de nuestro perfil de <a href="https://www.instagram.com/laura_cortes_m/" target="_blank" rel="noopener noreferrer">Instagram</a>.  ¡Estaremos encantadas de atenderte!</p>
-                </div>
-        </section>
+        <section id="cta-gallery">
+            </section>
+        <section id="sobre-mi"><h2>Sobre mí</h2></section>
+         <section id="servicios"><h2>Servicios</h2></section>
+         <section id="galeria"><h2>Galería</h2></section>
+         <section id="contacto"><h2>Contacto</h2></section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Peluquería Laura Cortes. Todos los derechos reservados.</p>
-    </footer>
+        </footer>
 
-    <script>
-        //<![CDATA[
-        window.addEventListener('load', function() {
-            // Tu código JavaScript aquí
-            const galeriaItems = document.querySelectorAll('.galeria-item img');
-            const visorImagen = document.getElementById('visor-imagen');
-            const imagenAmpliada = visorImagen.querySelector('img');
-            const cerrarVisor = document.getElementById('cerrar-visor');
-
-            galeriaItems.forEach(item => {
-                item.addEventListener('click', () => {
-                    const rutaCompleta = item.getAttribute('data-full-image');
-                    imagenAmpliada.src = rutaCompleta;
-                    visorImagen.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-
-            cerrarVisor.addEventListener('click', () => {
-                visorImagen.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-
-            const formularioContacto = document.getElementById('formulario-contacto');
-            if (formularioContacto) {
-                formularioContacto.addEventListener('submit', function(event) {
-                    let nombre = document.getElementById('nombre').value.trim();
-                    let email = document.getElementById('email').value.trim();
-                    let mensaje = document.getElementById('mensaje').value.trim();
-
-                    if (nombre === '' || email === '' || mensaje === '') {
-                        alert('Por favor, completa todos los campos del formulario.');
-                        event.preventDefault();
-                    } else if (!validarEmail(email)) {
-                        alert('Por favor, introduce un email válido.');
-                        event.preventDefault();
-                    }
-                    // El envío del formulario se manejará con PHP (ver enviar_correo.php)
-                });
-            }
-
-            function validarEmail(email) {
-                let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                return re.test(String(email).toLowerCase());
-            }
-        });
-        //]]>
-    </script>
-</body>
+    </body>
 </html>

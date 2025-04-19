@@ -1,476 +1,257 @@
+/* ... (Reseteo, Variables, Base, Cabecera - sin cambios) ... */
+
+/* ----------------------------- */
+/* --- Reseteo Básico CSS ------ */
+/* ----------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* ----------------------------- */
+/* --- Variables CSS ----------- */
+/* ----------------------------- */
+
+:root {
+  /* Paleta de Colores */
+  --color-white: #FFFFFF;
+  --color-background-light: #F8F8F8;
+  --color-grey-medium: #CCCCCC;
+  --color-text-dark: #333333;
+  --color-accent: #E0C9A6; /* Dorado Pálido */
+
+  /* Tipografía */
+  --font-primary: 'Lato', sans-serif;
+  --font-secondary: 'Raleway', sans-serif;
+
+  /* Otros valores útiles */
+  --container-width: 1140px;
+  --spacing-unit: 1rem;
+}
+
+/* ----------------------------- */
+/* --- Estilos Base ------------ */
+/* ----------------------------- */
+
 body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  font-family: var(--font-primary);
+  color: var(--color-text-dark);
+  background-color: var(--color-white);
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 500; /* Un poco más ligero que el 700 anterior */
+  line-height: 1.2;
+  margin-bottom: calc(var(--spacing-unit) * 1); /* Ajuste de margen */
 }
 
-.logo a {
-    font-size: 24px;
-    font-weight: 600;
-    color: #333;
-    text-decoration: none;
-}
-
-.logo a:hover {
-    color: #555;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #555;
-    font-weight: 500;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #888;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 50px;
-}
-
-h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-}
-
-h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #444;
+/* Título principal más grande */
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700; /* H1 sí más pesado */
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
 }
 
 p {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #666;
-    margin-bottom: 20px;
+    margin-bottom: calc(var(--spacing-unit) * 1.5);
+    line-height: 1.6;
 }
 
-.boton {
-    display: inline-block;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+.container {
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--spacing-unit) * 1.5);
+  padding-right: calc(var(--spacing-unit) * 1.5);
 }
 
-.boton-primario {
-    background-color: #888;
-    color: #fff;
+/* ------------------------------------------ */
+/* --- Estilos Cabecera (Centrada) ---------- */
+/* ------------------------------------------ */
+
+.main-header.centered-header {
+  background-color: var(--color-white);
+  padding: calc(var(--spacing-unit) * 1.5) var(--spacing-unit); /* Padding horiz. tambien */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-unit);
 }
 
-.boton-primario:hover {
-    background-color: #777;
+.logo-container .logo {
+  max-height: 50px; /* Reducido para cabecera centrada */
+  width: auto;
 }
 
-.boton-secundario {
-    background-color: #eee;
-    color: #555;
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: calc(var(--spacing-unit) * 1.5);
 }
 
-.boton-secundario:hover {
-    background-color: #ddd;
+.main-nav a {
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  color: var(--color-text-dark);
+  padding: calc(var(--spacing-unit) * 0.5) 0;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-.boton-cita {
-    background-color: #ff6f61;
-    color: #fff;
+.main-nav a:hover {
+  color: var(--color-accent);
 }
 
-.boton-cita:hover {
-    background-color: #e56253;
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
 }
 
-#inicio {
-    background-color: #f8f8f8;
-    padding: 50px 0;
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+
+/* ------------------------------------------ */
+/* --- Estilos Sección Hero (Dividida) ------ */
+/* ------------------------------------------ */
+
+.hero-split {
+  display: flex;
+  /* Asegura que ocupe una altura considerable, ej. 85% de la ventana */
+  min-height: 85vh;
+  background-color: var(--color-background-light); /* Color de fondo general */
+  /* Nota: Para responsive, usaremos @media queries para cambiar a flex-direction: column */
+}
+
+/* Columna de la Imagen */
+.hero-image-column {
+  flex: 1 1 50%; /* Ocupa el 50% del espacio, flexible */
+  overflow: hidden; /* Esconde cualquier desbordamiento de la imagen */
+  position: relative; /* Para posible contenido superpuesto si se necesitara */
+}
+
+.hero-image-column img {
+  width: 100%; /* Ocupa todo el ancho de su contenedor */
+  height: 100%; /* Ocupa toda la altura de su contenedor */
+  object-fit: cover; /* Redimensiona la imagen para mantener aspect ratio mientras llena el contenedor. Recorta si es necesario. */
+  object-position: center center; /* Centra la imagen (puedes probar 'center top' o 'center bottom' si queda mejor) */
+  display: block; /* Asegura que no haya espacio extra debajo */
+}
+
+/* Columna del Contenido */
+.hero-content-column {
+  flex: 1 1 50%; /* Ocupa el otro 50% del espacio, flexible */
+  display: flex;
+  flex-direction: column; /* Apila el contenido verticalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: flex-start; /* Alinea el contenido a la izquierda */
+  padding: calc(var(--spacing-unit) * 4); /* Padding generoso */
+  background-color: var(--color-white); /* Fondo blanco para esta columna */
+}
+
+/* Ajuste de margen inferior para el último elemento (el botón) */
+.hero-content-column > *:last-child {
+    margin-bottom: 0;
+}
+
+/* ----------------------------- */
+/* --- Estilos Botones --------- */
+/* ----------------------------- */
+
+.btn {
+  display: inline-block; /* Comportamiento de bloque pero en línea */
+  padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 1.8);
+  border: none;
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: var(--font-secondary); /* Fuente de títulos para botones */
+  font-weight: 500;
+  text-transform: uppercase; /* Mayúsculas para destacar */
+  letter-spacing: 0.5px; /* Ligero espaciado entre letras */
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-text-dark); /* Texto oscuro sobre fondo claro */
+  /* Podría ser var(--color-white) si el acento fuera oscuro */
+}
+
+.btn-primary:hover {
+  background-color: #d3b995; /* Un tono ligeramente más oscuro del acento para el hover */
+  transform: translateY(-2px); /* Efecto sutil de elevación */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra en hover */
+}
+
+/* ----------------------------- */
+/* --- Estilos Secciones ------- */
+/* ----------------------------- */
+/* Añadimos padding a todas las secciones para separarlas */
+main section:not(#hero) { /* Excluye la sección hero */
+    padding-top: calc(var(--spacing-unit) * 4);
+    padding-bottom: calc(var(--spacing-unit) * 4);
+}
+
+/* Centrar el contenido de las secciones que no sean hero */
+main section:not(#hero) > h2 {
     text-align: center;
+    margin-bottom: calc(var(--spacing-unit) * 3);
 }
 
-.inicio-contenido {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+/* Si quieres que el contenido de las secciones esté centrado y limitado en ancho */
+main section:not(#hero) .container {
+    /* La clase container ya limita el ancho y centra */
 }
 
-.inicio-imagen {
-    flex: 1;
-    max-width: 500px;
-    margin-bottom: 20px;
-}
+/* Ejemplo de cómo usar el contenedor dentro de una sección */
+/* #intro .container { ... } */
 
-.inicio-imagen img {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.inicio-presentacion {
-    flex: 1;
-    max-width: 600px;
-    text-align: left;
-    padding-left: 20px;
-}
-
-.inicio-botones {
-    margin-top: 30px;
-}
-
-#sobre-mi {
-    padding: 50px 0;
-    text-align: center;
-}
-
-.sobre-mi-contenido {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-#servicios {
-    padding: 50px 0;
-    background-color: #f8f8f8;
-}
-
-.servicios-contenido {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.servicio-destacado {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.servicio-destacado img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.servicios-otros {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 30px;
-}
-
-.servicio-item {
-    flex: 1;
-    min-width: 300px;
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.precios-servicios{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-.precio-item{
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-    margin-bottom: 5px;
-}
-.nota-precios{
-    font-size: 0.9em;
-    color: #888;
-    margin-top: 10px;
-    text-align: center;
-}
-
-#galeria {
-    padding: 50px 0;
-}
-
-.galeria-contenido {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.galeria-item {
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-.galeria-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.galeria-item img:hover {
-    transform: scale(1.1);
-}
-
-#visor-imagen {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 100;
-    justify-content: center;
-    align-items: center;
-}
-
-#visor-imagen img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-}
-
-#cerrar-visor {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #fff;
-    color: #333;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-#cerrar-visor:hover {
-    background-color: #ddd;
-}
-
-#testimonios {
-    padding: 50px 0;
-    background-color: #f8f8f8;
-}
-
-.testimonios-contenido {
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.testimonio-item {
-    margin-bottom: 30px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.testimonio-item p {
-    font-style: italic;
-    font-size: 18px;
-    color: #555;
-}
-
-.nombre-cliente {
-    font-weight: 600;
-    margin-top: 10px;
-    color: #333;
-}
-
-#contacto {
-    padding: 50px 0;
-}
-
-.contacto-contenido {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.contacto-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-bottom: 30px;
-}
-
-.contacto-info div {
-    flex: 1;
-    min-width: 300px;
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.contacto-info i {
-    margin-right: 10px;
-    font-size: 20px;
-    color: #888;
-}
-
-.contacto-info a {
-    color: #333;
-    text-decoration: none;
-}
-
-.contacto-info a:hover {
-    color: #555;
-}
-
-#formulario-contacto {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.form-grupo {
-    margin-bottom: 20px;
-}
-
-.form-grupo label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: #444;
-}
-
-.form-grupo input,
-.form-grupo textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-}
-
-.form-grupo input:focus,
-.form-grupo textarea:focus {
-    outline: none;
-    border-color: #888;
-}
-
-.form-grupo textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-#cita {
-    padding: 50px 0;
-    background-color: #f8f8f8;
-    text-align: center;
-}
-
-.cita-contenido {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-footer p {
-    font-size: 14px;
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header .logo {
-        margin-bottom: 10px;
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 10px;
-    }
-
-    .inicio-contenido {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .inicio-presentacion {
-        padding-left: 0;
-        margin-top: 20px;
-    }
-
-    .servicios-otros {
-        flex-direction: column;
-    }
-
-    .servicio-item {
-        min-width: auto;
-    }
-
-    .contacto-info {
-        flex-direction: column;
-    }
-    .contacto-info div{
-        min-width: auto;
-    }
-    .galeria-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
