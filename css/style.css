@@ -333,6 +333,196 @@ main section:not(#hero) .container {
     }
 }
 
+
+
+/* ----------------------------- */
+/* --- Estilos Sección Servicios -- */
+/* ----------------------------- */
+
+#servicios {
+  /* El padding general ya se aplica a las secciones,
+     pero podemos ajustar si es necesario */
+  background-color: var(--color-white); /* Fondo blanco para la sección */
+}
+
+#servicios h2 {
+  /* El centrado y margen inferior ya están definidos
+     en los estilos generales de sección h2 */
+}
+
+.servicios-grid {
+  display: grid;
+  /* Crea columnas flexibles que se adaptan al ancho.
+     Mínimo 300px, máximo 1 fracción del espacio disponible. */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: calc(var(--spacing-unit) * 2.5); /* Espacio entre tarjetas */
+  padding-top: var(--spacing-unit); /* Espacio extra después del título */
+}
+
+.servicio-card {
+  background-color: var(--color-background-light); /* Fondo claro para la tarjeta */
+  padding: calc(var(--spacing-unit) * 2);
+  border-radius: 8px; /* Bordes ligeramente redondeados */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07); /* Sombra sutil */
+  display: flex; /* Usamos flex para mejor control interno si es necesario */
+  flex-direction: column; /* Apila los elementos verticalmente */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Opcional: altura mínima para igualar tarjetas si el contenido varía mucho */
+  /* min-height: 250px; */
+}
+
+.servicio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.servicio-card h3 {
+  font-family: var(--font-secondary);
+  font-size: 1.4em; /* Tamaño del título del servicio */
+  color: var(--color-text-dark);
+  margin-bottom: calc(var(--spacing-unit) * 0.8);
+  font-weight: 500;
+}
+
+.servicio-card p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  color: #555; /* Un gris ligeramente más suave para el texto */
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+  flex-grow: 1; /* Hace que el párrafo ocupe el espacio disponible, empujando el precio hacia abajo */
+}
+
+.servicio-precio {
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  color: var(--color-accent); /* Usamos el color de acento */
+  font-size: 1.1em;
+  margin-top: auto; /* Asegura que esté al final si usamos flex */
+  margin-bottom: 0; /* Quitamos margen inferior al último elemento */
+  padding-top: calc(var(--spacing-unit) * 1); /* Espacio antes del precio */
+  border-top: 1px solid var(--color-grey-medium); /* Línea sutil de separación */
+  align-self: stretch; /* Asegura que la línea ocupe todo el ancho */
+  text-align: center; /* Centra el texto del precio */
+}
+
+
+/* --- Media Queries para Servicios --- */
+@media (max-width: 768px) {
+  .servicios-grid {
+     /* Ajusta el tamaño mínimo para tablets */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: calc(var(--spacing-unit) * 2);
+  }
+
+  .servicio-card {
+    padding: calc(var(--spacing-unit) * 1.5);
+  }
+
+  .servicio-card h3 {
+    font-size: 1.3em;
+  }
+
+   .servicio-card p {
+    font-size: 0.9em;
+  }
+
+  .servicio-precio {
+     font-size: 1em;
+   }
+}
+
+@media (max-width: 480px) {
+  .servicios-grid {
+    /* En móviles muy pequeños, quizás solo una columna */
+     grid-template-columns: 1fr;
+     gap: calc(var(--spacing-unit) * 1.5);
+  }
+}
+
+
+
+/* --- Estilos Galería --- */
+
+#galeria {
+  padding-top: calc(var(--spacing-unit) * 4);
+  padding-bottom: calc(var(--spacing-unit) * 4);
+}
+
+#galeria h2 {
+  text-align: center;
+  margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.galeria-container {
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--spacing-unit) * 1.5);
+  padding-right: calc(var(--spacing-unit) * 1.5);
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mínimo 250px, y se adapta al contenedor */
+  gap: calc(var(--spacing-unit) * 2); /* Espacio entre elementos */
+}
+
+.galeria-item {
+  display: flex; /* Para centrar la leyenda verticalmente si es necesario */
+  flex-direction: column;
+  border-radius: 5px;
+  overflow: hidden; /* Importante: asegura que la imagen y la leyenda respeten el borde redondeado */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: transform 0.3s ease; /* Transición para el efecto hover */
+  background-color: var(--color-white); /* Fondo blanco para cada item */
+}
+
+.galeria-item:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta la imagen para llenar el contenedor, manteniendo la proporción */
+  display: block; /* Elimina el espacio extra debajo de la imagen */
+}
+
+.galeria-item figcaption {
+  padding: calc(var(--spacing-unit) * 1);
+  text-align: center;
+  font-size: 0.9em;
+  color: var(--color-text-dark);
+  background-color: var(--color-background-light); /* Fondo claro para la leyenda */
+  border-top: 1px solid var(--color-grey-medium); /* Separación visual de la imagen */
+}
+
+
+
+/* --- Media Queries para Responsividad --- */
+
+@media (max-width: 768px) {
+  .galeria-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta el tamaño mínimo para pantallas más pequeñas */
+    gap: calc(var(--spacing-unit) * 1.5);
+  }
+
+  .galeria-item figcaption {
+    font-size: 0.85em; /* Ajusta el tamaño de la fuente en pantallas más pequeñas */
+    padding: calc(var(--spacing-unit) * 0.75);
+  }
+}
+
+@media (max-width: 480px) {
+  .galeria-grid {
+    grid-template-columns: 1fr; /* Una sola columna en móviles pequeños */
+  }
+   .galeria-item figcaption{
+     font-size: 0.8em;
+   }
+}
+
+
 /* Móviles pequeños */
 @media (max-width: 480px) {
     .main-nav ul {
@@ -350,4 +540,168 @@ main section:not(#hero) .container {
     .hero-content-column h1 {
         font-size: 1.6em;
     }
+}
+
+/* ------------------------------------------ */
+/* --- Estilos Sección Contacto (Simplificada) -- */
+/* ------------------------------------------ */
+
+#contacto {
+  background-color: var(--color-background-light);
+  padding-top: calc(var(--spacing-unit) * 4);
+  padding-bottom: calc(var(--spacing-unit) * 5);
+  text-align: center; /* Centramos el contenido general de la sección */
+}
+
+#contacto h2 {
+  /* Estilos generales de sección h2 ya aplicados */
+  margin-bottom: calc(var(--spacing-unit) * 1.5); /* Menos margen inferior */
+}
+
+.contacto-container-simple {
+  /* Este contenedor ayuda a centrar el bloque de información */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacto-info-principal {
+  max-width: 700px; /* Ancho máximo para el bloque de info */
+  width: 100%;
+  background-color: var(--color-white); /* Fondo blanco para el bloque */
+  padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 3);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: left; /* Alineamos el texto a la izquierda dentro del bloque */
+}
+
+.contacto-info-principal h3 {
+  font-family: var(--font-secondary);
+  font-size: 1.8em; /* Un poco más grande */
+  color: var(--color-text-dark);
+  margin-bottom: calc(var(--spacing-unit) * 1);
+  text-align: center; /* Centramos el título principal del bloque */
+}
+
+.contacto-info-principal p {
+  text-align: center; /* Centramos el párrafo introductorio */
+  margin-bottom: calc(var(--spacing-unit) * 2);
+  color: #555;
+  font-size: 1.05em;
+}
+
+.contacto-acciones {
+  display: flex;
+  flex-direction: column; /* Apilados por defecto */
+  gap: var(--spacing-unit) * 1.5; /* Espacio entre botones */
+  margin-bottom: calc(var(--spacing-unit) * 3); /* Espacio después de los botones */
+  align-items: center; /* Centra los botones cuando están en columna */
+}
+
+.btn-contacto {
+   /* Usa estilos base de .btn */
+   width: 80%; /* Ancho considerable pero no total */
+   max-width: 350px; /* Ancho máximo */
+   padding-top: calc(var(--spacing-unit) * 1); /* Más padding vertical */
+   padding-bottom: calc(var(--spacing-unit) * 1);
+   font-size: 1.1em;
+   /* Iconos: Si añades iconos (ej. Font Awesome) puedes ponerlos antes del texto
+      y añadir un pequeño margen: .btn-contacto i { margin-right: 8px; } */
+}
+
+/* Definimos un estilo secundario si no lo teníamos */
+.btn-secondary {
+  background-color: var(--color-text-dark); /* Fondo oscuro */
+  color: var(--color-white); /* Texto blanco */
+  border: 1px solid var(--color-text-dark);
+}
+
+.btn-secondary:hover {
+  background-color: #555; /* Un poco más claro al pasar el ratón */
+  border-color: #555;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contacto-info-principal h4 {
+   font-family: var(--font-secondary);
+   font-size: 1.3em;
+   color: var(--color-text-dark);
+   margin-top: calc(var(--spacing-unit) * 2); /* Espacio antes de "Otros datos" */
+   margin-bottom: calc(var(--spacing-unit) * 1.5);
+   text-align: center;
+   border-top: 1px solid var(--color-grey-medium); /* Separador */
+   padding-top: calc(var(--spacing-unit) * 2); /* Espacio sobre el separador */
+ }
+
+.contacto-info-principal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; /* Centramos la lista */
+}
+
+.contacto-info-principal li {
+  margin-bottom: calc(var(--spacing-unit) * 1.5);
+  font-size: 1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.contacto-info-principal li strong {
+  color: var(--color-text-dark);
+  font-weight: 500;
+  display: block; /* Hace que el strong ocupe su línea */
+  margin-bottom: calc(var(--spacing-unit) * 0.2);
+}
+
+.contacto-info-principal a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contacto-info-principal a:hover {
+  color: #d3b995;
+}
+
+/* Mapa opcional (sin cambios respecto a la versión anterior) */
+.mapa-container {
+   margin-top: calc(var(--spacing-unit) * 2.5);
+   border-radius: 5px;
+   overflow: hidden;
+   line-height: 0;
+   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+ }
+
+/* --- Media Queries para Contacto (Simplificada) --- */
+@media (min-width: 600px) { /* A partir de 600px ponemos los botones en fila */
+  .contacto-acciones {
+    flex-direction: row; /* Botones en fila */
+    justify-content: center; /* Centra los botones en la fila */
+  }
+  .btn-contacto {
+    width: auto; /* Ancho automático */
+    padding-left: calc(var(--spacing-unit) * 2); /* Ajusta padding */
+    padding-right: calc(var(--spacing-unit) * 2);
+  }
+}
+
+@media (max-width: 480px) {
+   .contacto-info-principal {
+      padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 1.5);
+   }
+   .contacto-info-principal h3 {
+      font-size: 1.6em;
+   }
+   .btn-contacto {
+      width: 90%; /* Un poco más anchos en móvil muy pequeño */
+      font-size: 1em;
+   }
+   .contacto-info-principal h4 {
+      font-size: 1.2em;
+   }
+   .contacto-info-principal li {
+      font-size: 0.95em;
+   }
 }
