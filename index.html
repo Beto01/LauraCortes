@@ -1,188 +1,245 @@
 <!DOCTYPE html>
+<!-- Establece el idioma del documento a Español -->
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laura Cortés - Estilista Profesional</title>
-  <meta name="description" content="Peluquería especializada en melenas largas y cuidado del cabello. Estilo moderno y profesional.">
+  <!-- Título de la página: específico y relevante -->
+  <title>Laura Cortés - Estilista Profesional en [Tu Ciudad/Especialidad Principal]</title>
+  <!-- Descripción: concisa y orientada a SEO, con placeholders para rellenar -->
+  <meta name="description" content="Portafolio y servicios de Laura Cortés, estilista profesional especializada en [Técnica Principal, e.g., balayage] y cuidado del cabello en [Tu Ciudad]. Descubre tu nuevo look.">
+  <!-- Preconnect para Google Fonts (optimización de carga) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts: Lato y Raleway (revisar si son las definitivas) -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Enlace a la hoja de estilos principal (se mantendrá css/style.css por ahora) -->
   <link rel="stylesheet" href="css/style.css">
+  <!-- Futuro: Añadir un favicon -->
+  <!-- <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon"> -->
 </head>
 <body>
-    <header class="main-header centered-header">
-    <div class="logo-container">
-      <a href="index.html" title="Ir a la página de inicio">
-        <img src="imagenes/Logo.jpg" alt="Logo Laura Cortés Estilista" class="logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/E0C9A6/333333?text=Laura+Cortes'; this.style.border='1px solid #ccc';">
-      </a>
+
+  <!-- Encabezado Principal del Sitio -->
+  <header class="site-header">
+    <div class="container header-container">
+      <div class="logo-container">
+        <a href="index.html" title="Ir a la página de inicio de Laura Cortés Estilista">
+          <!-- El alt text del logo es más descriptivo. Rellenar el src y el placeholder. -->
+          <img src="imagenes/Logo.jpg" alt="Laura Cortés Estilista - Logo Principal" class="logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/E0C9A6/333333?text=Laura+Cortes+Logo'; this.style.border='1px solid #ccc';">
+        </a>
+      </div>
+      <!-- Navegación principal con aria-label para accesibilidad -->
+      <nav class="main-nav" aria-label="Navegación Principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre Mí</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
     </div>
-        <nav class="main-nav">
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <main>
-        <section id="hero" class="hero-split">
+  <!-- Contenido Principal del Sitio -->
+  <main class="site-main">
+
+    <!-- Sección Hero: Presentación principal -->
+    <section id="hero" class="hero-section hero-split">
+      <!-- Columna de la imagen del héroe -->
       <div class="hero-image-column">
-        <img src="imagenes/Laura1.jpg"
-          alt="Modelo con peinado de Laura Cortés"
-          onerror="this.onerror=null; this.src='https://placehold.co/600x800/cccccc/333333?text=Error+Cargando+Imagen';">
+        <!-- Rellenar src y alt con imagen y descripción real -->
+        <img src="imagenes/Laura1.jpg" alt="Modelo luciendo un peinado espectacular realizado por Laura Cortés" onerror="this.onerror=null; this.src='https://placehold.co/600x800/cccccc/333333?text=Imagen+Hero+Principal';">
       </div>
+      <!-- Columna del contenido del héroe -->
       <div class="hero-content-column">
-        <h1>Laura Cortés Estilista</h1>
-        <p>Especialista en realzar la belleza natural de tu melena. Cuidado experto para cabellos largos y coloraciones.</p>
-        <a href="#galeria" class="btn btn-primary">Ver Galería</a>
+        <div class="container">
+          <!-- Título principal H1: claro y conciso -->
+          <h1>Laura Cortés Estilista</h1>
+          <!-- Párrafo introductorio: Rellenar con propuesta de valor -->
+          <p>Especialista en realzar la belleza natural de tu melena. Cuidado experto para cabellos largos y coloraciones vanguardistas. ¡Descubre tu mejor versión!</p>
+          <!-- Llamada a la acción principal -->
+          <a href="#galeria" class="btn btn-primary">Ver Trabajos Destacados</a>
+        </div>
       </div>
     </section>
 
-        <section id="intro">
-          </section>
+    <!-- Sección Introductoria Opcional (antes "intro") -->
+    <!-- Si se decide usar, darle un propósito claro, e.g., breve bienvenida o filosofía -->
+    <!-- <section id="introduccion" class="intro-section">
+      <div class="container">
+        <h2>Bienvenida a Mi Espacio Creativo</h2>
+        <p>Aquí puedes añadir un breve párrafo sobre tu filosofía de trabajo o lo que te inspira.</p>
+      </div>
+    </section> -->
 
-            <section id="cta-gallery">
-          </section>
-
-        <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-            <div class="about-me-content container">
-                <div class="about-me-image">
-                    <img src="imagenes/laura-perfil.jpg" alt="Foto de Laura Cortés" onerror="this.onerror=null; this.src='imagenes/Laura17.jpg'; this.style.border='1px solid #ccc';">
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="about-section">
+      <div class="container">
+        <h2>Sobre Mí</h2>
+        <div class="about-content">
+          <div class="about-image">
+            <!-- Rellenar src y alt con imagen y descripción real -->
+            <img src="imagenes/laura-perfil.jpg" alt="Retrato profesional de Laura Cortés, estilista" onerror="this.onerror=null; this.src='imagenes/Laura17.jpg'; this.style.border='1px solid #ccc';">
+          </div>
+          <div class="about-text">
+            <!-- Rellenar con la historia y experiencia de Laura. Usar párrafos para estructurar. -->
+            <p>¡Hola! Soy Laura Cortés, una apasionada estilista con <strong>[X años]</strong> de experiencia dedicada a realzar la belleza única de cada melena, especialmente las largas. Mi viaje en el mundo de la peluquería comenzó <strong>[continuar la historia...]</strong>.</p>
+            <p>Creo firmemente en un enfoque personalizado, donde la salud y la vitalidad de tu cabello son la prioridad. Me especializo en técnicas de coloración que respetan la fibra capilar y cortes que aportan movimiento y vida a tu melena.</p>
+            <p>Mi objetivo es que salgas del salón sintiéndote radiante y segura, con un cabello que no solo se ve espectacular, sino que también se siente sano y cuidado. Me encanta escuchar tus ideas y trabajar juntas para lograr el look perfecto para ti.</p>
+          </div>
         </div>
-                <div class="about-me-text">
-          <p>¡Hola! Soy Laura Cortés, una apasionada estilista con X años de experiencia dedicada a realzar la belleza única de cada melena, especialmente las largas. Mi viaje en el mundo de la peluquería comenzó...</p>
-          <p>Creo firmemente en un enfoque personalizado, donde la salud y la vitalidad de tu cabello son la prioridad. Me especializo en técnicas de coloración que respetan la fibra capilar y cortes que aportan movimiento y vida a tu melena.</p>
-          <p>Mi objetivo es que salgas del salón sintiéndote radiante y segura, con un cabello que no solo se ve espectacular, sino que también se siente sano y cuidado. Me encanta escuchar tus ideas y trabajar juntas para lograr el look perfecto para ti.</p>
-                  </div>
       </div>
     </section>
 
+    <!-- Sección Servicios -->
+    <section id="servicios" class="services-section">
+      <div class="container">
+        <h2>Mis Servicios</h2>
+        <div class="services-grid">
+          <!-- Cada servicio es un <article> para mejor semántica -->
+          <article class="service-card">
+            <h3>Balayage y Mechas</h3>
+            <p>Técnicas personalizadas para iluminar tu melena con naturalidad y reflejos que realzan tu estilo único.</p>
+            <p class="service-price">Consultar precio</p> <!-- O añadir precio/rango -->
+          </article>
 
-        <section id="servicios">
-  <h2>Servicios</h2>
-  <div class="container">
-    <div class="servicios-grid">
+          <article class="service-card">
+            <h3>Corte Mujer Personalizado</h3>
+            <p>Desde mantener la salud de tu melena larga hasta cortes tendencia que aportan movimiento, frescura y se adaptan a ti.</p>
+            <p class="service-price">Consultar precio</p>
+          </article>
 
-      <article class="servicio-card">
-        <h3>Balayage y Mechas</h3>
-        <p>Técnicas personalizadas para iluminar tu melena con naturalidad y reflejos que realzan tu estilo.</p>
-        <p class="servicio-precio">Consultar precio</p>
-      </article>
+          <article class="service-card">
+            <h3>Coloración Global Premium</h3>
+            <p>Aplicación experta de color con productos de alta calidad para un tono uniforme, brillante, duradero y respetuoso con tu cabello.</p>
+            <p class="service-price">Consultar precio</p>
+          </article>
 
-      <article class="servicio-card">
-        <h3>Corte Mujer</h3>
-        <p>Desde mantener la salud de tu melena larga hasta cortes tendencia que aportan movimiento y frescura.</p>
-        <p class="servicio-precio">Consultar precio</p>
-      </article>
+          <article class="service-card">
+            <h3>Tratamientos Capilares Intensivos</h3>
+            <p>Recupera la vitalidad, hidratación y brillo de tu cabello con tratamientos profundos y específicos para cada necesidad.</p>
+            <p class="service-price">Consultar precio</p>
+          </article>
 
-      <article class="servicio-card">
-        <h3>Coloración Global</h3>
-        <p>Aplicación experta de color con productos de alta calidad para un tono uniforme, brillante y duradero.</p>
-        <p class="servicio-precio">Consultar precio</p>
-      </article>
+          <article class="service-card">
+            <h3>Peinado y Acabado Profesional</h3>
+            <p>Looks pulidos para el día a día o peinados especiales para eventos. Ondas, lisos, recogidos y más, con un toque profesional.</p>
+            <p class="service-price">Consultar precio</p>
+          </article>
 
-      <article class="servicio-card">
-        <h3>Tratamientos Capilares</h3>
-        <p>Recupera la vitalidad, hidratación y brillo de tu cabello con tratamientos profundos y específicos.</p>
-        <p class="servicio-precio">Consultar precio</p>
-      </article>
-
-      <article class="servicio-card">
-        <h3>Peinado y Acabado</h3>
-        <p>Looks pulidos para el día a día o peinados especiales para eventos. Ondas, lisos, recogidos y más.</p>
-        <p class="servicio-precio">Consultar precio</p>
-      </article>
-
-      <article class="servicio-card">
-        <h3>Asesoramiento Personalizado</h3>
-        <p>Te ayudo a encontrar el estilo, color y cuidado que mejor se adaptan a ti y a tu tipo de cabello.</p>
-        <p class="servicio-precio">Incluido en servicios</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-        <section id="galeria">
-  <h2>Galería</h2>
-  <div class="galeria-container container">
-    <div class="galeria-grid">
-      <figure class="galeria-item">
-        <img src="imagenes/galeria/Laura12.jpg" alt="Descripción del peinado 1" onerror="this.onerror=null; this.src='https://placehold.co/400x400/cccccc/333333?text=Imagen+No+Disponible';">
-        <figcaption>Descripción breve del peinado 1</figcaption>
-      </figure>
-      <figure class="galeria-item">
-        <img src="imagenes/galeria/Laura2.jpg" alt="Descripción del balayage 2" onerror="this.onerror=null; this.src='https://placehold.co/400x400/cccccc/333333?text=Imagen+No+Disponible';">
-        <figcaption>Descripción breve del balayage 2</figcaption>
-      </figure>
-      <figure class="galeria-item">
-          <img src="imagenes/galeria/Laura5.jpg" alt="Descripción del peinado 3" onerror="this.onerror=null; this.src='https://placehold.co/400x400/cccccc/333333?text=Imagen+No+Disponible';">
-          <figcaption>Descripción breve del peinado 3</figcaption>
-        </figure>
-        <figure class="galeria-item">
-          <img src="imagenes/galeria/Laura6.jpg" alt="Descripción del balayage 4" onerror="this.onerror=null; this.src='https://placehold.co/400x400/cccccc/333333?text=Imagen+No+Disponible';">
-          <figcaption>Descripción breve del balayage 4</figcaption>
-        </figure>
-      </div>
-  </div>
-</section>
-
-
-        <section id="contacto">
-  <h2>Contacto y Citas</h2>
-  <div class="container">
-    <div class="contacto-container-simple"> 
-
-      <div class="contacto-info-principal">
-        <h3>Pide tu Cita o Consulta</h3>
-        <p>La forma más directa de contactar conmigo y reservar tu cita es a través de WhatsApp o Instagram. ¡Te responderé lo antes posible!</p>
-
-        <div class="contacto-acciones">
-          <a href="https://wa.me/34645685099" class="btn btn-primary btn-contacto" target="_blank" rel="noopener noreferrer">
-             Contactar por WhatsApp
-          </a>
-          <a href="[URL_INSTAGRAM]" class="btn btn-secondary btn-contacto" target="_blank" rel="noopener noreferrer">
-            Ver Perfil de Instagram
-          </a>
+          <article class="service-card">
+            <h3>Asesoramiento de Imagen Capilar</h3>
+            <p>Te ayudo a encontrar el estilo, color y cuidado que mejor se adaptan a tu rostro, tipo de cabello y estilo de vida.</p>
+            <p class="service-price">Incluido en otros servicios / Consultar</p>
+          </article>
         </div>
+      </div>
+    </section>
 
-        <h4>Otros datos de contacto:</h4>
-        <ul>
-          <li>
-            <strong>Dirección:</strong><br>
-            [Tu Calle, Número, Ciudad]
-             </li>
-          <li>
-            <strong>Teléfono (Llamadas):</strong><br>
-            <a href="tel:+34000000000">[+34 XXX XX XX XX]</a>
-          </li>
-           <li>
-             <strong>Email:</strong><br>
-             <a href="mailto:tuemail@ejemplo.com">[tuemail@ejemplo.com]</a>
-           </li>
-          <li>
-            <strong>Horario:</strong><br>
-            [Días y Horas de Apertura]<br>
-            (Ej: Martes a Viernes: 10:00 - 19:00 | Sábados: 09:00 - 14:00)
-          </li>
-        </ul>
+    <!-- Sección Call to Action para Galería (antes "cta-gallery") -->
+    <!-- Si se usa, debe ser un CTA claro. Ejemplo: -->
+    <!-- <section id="cta-galeria-preview" class="cta-gallery-section">
+      <div class="container text-center">
+        <h2>Inspiración para Tu Cabello</h2>
+        <p>Descubre algunos de mis trabajos más recientes y encuentra la inspiración para tu próximo cambio de look.</p>
+        <a href="#galeria" class="btn btn-secondary">Explorar Galería Completa</a>
+      </div>
+    </section> -->
 
-         </div>
-    </div>
-  </div>
-</section>
+    <!-- Sección Galería -->
+    <section id="galeria" class="gallery-section">
+      <div class="container">
+        <h2>Galería de Trabajos</h2>
+        <div class="gallery-grid">
+          <!-- Items de la galería. Rellenar src, alt y figcaption para cada uno. -->
+          <figure class="gallery-item">
+            <img src="imagenes/galeria/Laura12.jpg" alt="Peinado elegante con ondas suaves y reflejos dorados." onerror="this.onerror=null; this.src='https://placehold.co/400x400/cccccc/333333?text=Trabajo+1';">
+            <figcaption>Balayage miel en melena larga</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="imagenes/galeria/Laura2.jpg" alt="Corte bob moderno con coloración vibrante." onerror="this.onerror=null; this.src='https://placehold.co/400x400/cccccc/333333?text=Trabajo+2';">
+            <figcaption>Corte texturizado y color cobrizo</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="imagenes/galeria/Laura5.jpg" alt="Recogido sofisticado para evento especial." onerror="this.onerror=null; this.src='https://placehold.co/400x400/cccccc/333333?text=Trabajo+3';">
+            <figcaption>Peinado de novia elegante</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="imagenes/galeria/Laura6.jpg" alt="Melenas largas con mechas balayage naturales." onerror="this.onerror=null; this.src='https://placehold.co/400x400/cccccc/333333?text=Trabajo+4';">
+            <figcaption>Iluminación natural para melenas</figcaption>
+          </figure>
+          <!-- Añadir más items si es necesario -->
+        </div>
+      </div>
+    </section>
 
+    <!-- Sección Contacto -->
+    <section id="contacto" class="contact-section">
+      <div class="container">
+        <h2>Contacto y Citas</h2>
+        <div class="contact-content-wrapper">
+          <div class="contact-intro">
+            <h3>¿Lista para tu transformación?</h3>
+            <p>La forma más directa de contactarme y reservar tu cita es a través de WhatsApp o Instagram. ¡Te responderé lo antes posible para ayudarte a conseguir el look que deseas!</p>
+            <!-- Llamadas a la acción principales -->
+            <div class="contact-actions">
+              <a href="https://wa.me/34645685099" class="btn btn-primary btn-contact" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
+              <!-- Rellenar URL de Instagram -->
+              <a href="[URL_INSTAGRAM_AQUI]" class="btn btn-secondary btn-contact" target="_blank" rel="noopener noreferrer">Ver Perfil de Instagram</a>
+            </div>
+          </div>
+
+          <div class="contact-details">
+            <h4>Más Información de Contacto:</h4>
+            <ul>
+              <li>
+                <strong>Dirección del Salón:</strong><br>
+                <!-- Rellenar dirección -->
+                [Tu Calle, Número, Ciudad, Código Postal]
+              </li>
+              <li>
+                <strong>Teléfono (Solo llamadas urgentes o alternativas):</strong><br>
+                <!-- Rellenar teléfono y href -->
+                <a href="tel:+34000000000">[+34 XXX XX XX XX]</a>
+              </li>
+              <li>
+                <strong>Email (Consultas generales):</strong><br>
+                <!-- Rellenar email y href -->
+                <a href="mailto:tuemail@ejemplo.com">[tuemail@ejemplo.com]</a>
+              </li>
+              <li>
+                <strong>Horario de Apertura:</strong><br>
+                <!-- Rellenar horario -->
+                [Días y Horas de Apertura]<br>
+                (Ej: Martes a Viernes: 10:00 - 19:00 | Sábados: 09:00 - 14:00)
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Opcional: Mapa de ubicación -->
+        <!-- <div class="map-container">
+          <iframe src="URL_DE_GOOGLE_MAPS_EMBED" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div> -->
+      </div>
+    </section>
 
   </main>
 
-    <footer>
-        </footer>
+  <!-- Pie de Página del Sitio -->
+  <footer class="site-footer">
+    <div class="container">
+      <!-- Rellenar con el año actual y nombre. Enlaces opcionales. -->
+      <p>&copy; <span id="current-year"></span> Laura Cortés Estilista. Todos los derechos reservados.</p>
+      <p>Diseño web por [Tu Nombre/Agencia si aplica] - <a href="#!">Política de Privacidad</a></p>
+    </div>
+  </footer>
 
-  </body>
+  <!-- Script para el año actual en el footer (opcional, podría hacerse en el backend también) -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
 </html>
