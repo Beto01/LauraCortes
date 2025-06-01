@@ -1,0 +1,647 @@
+/* ==========================================================================
+   1. Variables CSS y Reseteo Básico
+   ========================================================================== */
+
+:root {
+  /* Paleta de Colores Principal */
+  --color-primary-accent: #E0C9A6; /* Dorado Pálido (puede ajustarse) */
+  --color-primary-accent-darker: #d3b995; /* Para hovers en primario */
+  --color-secondary-accent: #4A90E2; /* Azul Google (ejemplo, si se quiere más color) */
+  --color-text-dark: #333333;       /* Gris oscuro para texto principal */
+  --color-text-light: #5f6368;      /* Gris medio para texto secundario (similar a Google) */
+  --color-text-on-primary: #202124; /* Texto oscuro sobre acento primario si es claro */
+  --color-white: #FFFFFF;
+  --color-background-light: #f8f9fa; /* Fondo ligeramente gris (Google style) */
+  --color-border-light: #dfe1e5;   /* Bordes sutiles (Google style) */
+
+  /* Tipografía */
+  --font-primary: 'Lato', Arial, sans-serif;      /* Fuente principal para cuerpo de texto */
+  --font-secondary: 'Raleway', Arial, sans-serif; /* Fuente para títulos y elementos destacados */
+
+  /* Tamaños de Fuente Base (ajustar según diseño final) */
+  --font-size-base: 16px;
+  --font-size-h1: 2.75rem; /* ~44px */
+  --font-size-h2: 2rem;   /* ~32px */
+  --font-size-h3: 1.5rem; /* ~24px */
+  --font-size-p: 1rem;    /* ~16px */
+  --line-height-base: 1.6;
+
+  /* Espaciado y Layout */
+  --container-width: 1140px;
+  --spacing-unit: 1rem; /* 16px */
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+
+  /* Sombras (estilo Material Design) */
+  --shadow-elevation-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --shadow-elevation-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  --shadow-elevation-3: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+  /* Transiciones */
+  --transition-fast: all 0.2s ease-in-out;
+  --transition-medium: all 0.3s ease-in-out;
+}
+
+/* Reseteo Básico (Normalize.css inspirado) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth; /* Desplazamiento suave para anclas */
+  font-family: var(--font-primary);
+  color: var(--color-text-dark);
+  background-color: var(--color-white);
+}
+
+body {
+  overflow-x: hidden; /* Prevenir scroll horizontal accidental */
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto; /* Mantener proporción por defecto */
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary-accent); /* Color de enlace por defecto */
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-accent-darker);
+  text-decoration: underline; /* Feedback claro en hover */
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit; /* Heredar fuentes */
+}
+
+/* ==========================================================================
+   2. Contenedor Principal y Utilidades
+   ========================================================================== */
+
+.container {
+  width: 90%; /* Más flexible en pantallas pequeñas */
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--spacing-unit) * 1.5);  /* 24px */
+  padding-right: calc(var(--spacing-unit) * 1.5); /* 24px */
+}
+
+/* Utilidad para centrar texto */
+.text-center {
+  text-align: center;
+}
+
+/* ==========================================================================
+   3. Estilos de Encabezados (Tipografía)
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+  font-weight: 700; /* Títulos más bold por defecto */
+  line-height: 1.3;
+  margin-top: calc(var(--spacing-unit) * 2);    /* 32px */
+  margin-bottom: calc(var(--spacing-unit) * 1); /* 16px */
+  color: var(--color-text-dark);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 700; /* H1 más pesado */
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  margin-bottom: calc(var(--spacing-unit) * 2); /* Más espacio después de H2 de sección */
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+p {
+  margin-bottom: calc(var(--spacing-unit) * 1.5); /* 24px */
+  color: var(--color-text-light); /* Texto de párrafo más suave */
+  line-height: var(--line-height-base);
+}
+
+/* ==========================================================================
+   4. Cabecera del Sitio (.site-header)
+   ========================================================================== */
+
+.site-header {
+  background-color: var(--color-white);
+  padding-top: var(--spacing-unit);    /* 16px */
+  padding-bottom: var(--spacing-unit); /* 16px */
+  box-shadow: var(--shadow-elevation-1); /* Sombra sutil */
+  position: sticky; /* Header fijo al hacer scroll */
+  top: 0;
+  z-index: 1000; /* Asegurar que esté por encima de otros elementos */
+}
+
+.site-header .header-container { /* Usamos la clase específica del HTML nuevo */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header .logo-container .logo {
+  max-height: 50px; /* Ajustar según el nuevo logo */
+  width: auto;
+}
+
+.site-header .main-nav ul {
+  display: flex;
+  gap: calc(var(--spacing-unit) * 2); /* 32px de espacio entre elementos del menú */
+}
+
+.site-header .main-nav a {
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  color: var(--color-text-light);
+  padding: calc(var(--spacing-unit) * 0.5) 0; /* 8px padding vertical */
+  position: relative;
+  text-decoration: none; /* Quitar subrayado por defecto */
+}
+
+.site-header .main-nav a:hover,
+.site-header .main-nav a:focus, /* Mejorar accesibilidad */
+.site-header .main-nav a.active { /* Si se implementa clase active para la página actual */
+  color: var(--color-primary-accent);
+}
+
+/* Efecto de línea inferior en hover/focus para navegación */
+.site-header .main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Ligeramente debajo del texto */
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary-accent);
+  transition: var(--transition-medium);
+}
+
+.site-header .main-nav a:hover::after,
+.site-header .main-nav a:focus::after,
+.site-header .main-nav a.active::after {
+  width: 100%;
+}
+
+/* ==========================================================================
+   5. Sección Hero (.hero-section)
+   ========================================================================== */
+
+.hero-section { /* Antes .hero-split */
+  display: flex;
+  min-height: 85vh; /* Altura mínima para ocupar gran parte de la pantalla */
+  background-color: var(--color-background-light);
+  align-items: center; /* Centrar verticalmente el contenido en el flex container */
+}
+
+.hero-section .hero-image-column {
+  flex: 1 1 50%;
+  overflow: hidden;
+  height: 85vh; /* Asegurar que la imagen ocupe la altura */
+}
+
+.hero-section .hero-image-column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cubrir el espacio sin distorsionar */
+  object-position: center;
+}
+
+.hero-section .hero-content-column {
+  flex: 1 1 50%;
+  display: flex; /* Para centrar el .container interno si es necesario */
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--spacing-unit) * 3); /* 48px padding */
+  background-color: var(--color-white); /* Fondo blanco para contraste */
+}
+
+.hero-section .hero-content-column .container {
+  padding-left: calc(var(--spacing-unit) * 2); /* Ajustar padding interno del container */
+  padding-right: calc(var(--spacing-unit) * 2);
+}
+
+
+.hero-section .hero-content-column h1 {
+  font-size: var(--font-size-h1);
+  color: var(--color-text-dark);
+  margin-bottom: calc(var(--spacing-unit) * 1.5); /* 24px */
+}
+
+.hero-section .hero-content-column p {
+  font-size: calc(var(--font-size-p) * 1.1); /* Texto un poco más grande */
+  color: var(--color-text-light);
+  margin-bottom: calc(var(--spacing-unit) * 2); /* 32px */
+}
+
+/* ==========================================================================
+   6. Botones (.btn)
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-secondary);
+  font-weight: 600; /* Botones un poco más bold */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: calc(var(--spacing-unit) * 0.9) calc(var(--spacing-unit) * 2.2); /* Ajustar padding para un look más moderno (14px 35px) */
+  border-radius: var(--border-radius-small); /* Bordes redondeados (4px) */
+  border: none; /* Sin bordes por defecto */
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none; /* Asegurar que no haya subrayado de 'a' tags */
+  transition: var(--transition-medium);
+  box-shadow: var(--shadow-elevation-1); /* Sombra base para botones */
+}
+
+.btn:hover,
+.btn:focus {
+  transform: translateY(-2px); /* Elevar ligeramente */
+  box-shadow: var(--shadow-elevation-2); /* Sombra más pronunciada */
+  text-decoration: none; /* Mantener sin subrayado en hover */
+}
+
+.btn-primary {
+  background-color: var(--color-primary-accent);
+  color: var(--color-text-on-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--color-primary-accent-darker);
+  color: var(--color-text-on-primary);
+}
+
+.btn-secondary {
+  background-color: var(--color-text-dark);
+  color: var(--color-white);
+  /* border: 1px solid var(--color-text-dark); */ /* Opcional: borde si se prefiere */
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--color-text-light); /* Un gris más claro para el hover */
+  color: var(--color-white);
+}
+
+/* ==========================================================================
+   7. Estilos Generales de Sección
+   ========================================================================== */
+
+.site-main section { /* Aplicar a todas las secciones dentro de main */
+  padding-top: calc(var(--spacing-unit) * 4);    /* 64px */
+  padding-bottom: calc(var(--spacing-unit) * 4); /* 64px */
+}
+
+.site-main section:nth-child(even) { /* Fondo alterno para algunas secciones */
+  background-color: var(--color-background-light);
+}
+
+.site-main section > h2 { /* Título de sección */
+  text-align: center;
+  margin-bottom: calc(var(--spacing-unit) * 3); /* 48px */
+}
+
+/* ==========================================================================
+   8. Sección Sobre Mí (.about-section)
+   ========================================================================== */
+
+.about-section .about-content {
+  display: flex;
+  align-items: center; /* Alinear imagen y texto verticalmente */
+  gap: calc(var(--spacing-unit) * 3); /* 48px espacio entre imagen y texto */
+}
+
+.about-section .about-image {
+  flex: 0 0 300px; /* Ancho fijo para la imagen, no se encoge ni crece */
+  height: 300px; /* Altura fija */
+  border-radius: 50%; /* Imagen de perfil redonda */
+  overflow: hidden;
+  box-shadow: var(--shadow-elevation-2);
+}
+
+.about-section .about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-section .about-text {
+  flex: 1; /* El texto ocupa el espacio restante */
+}
+
+.about-section .about-text p {
+  margin-bottom: var(--spacing-unit); /* Menos espacio entre párrafos en esta sección */
+}
+
+/* ==========================================================================
+   9. Sección Servicios (.services-section)
+   ========================================================================== */
+
+.services-section .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas adaptables */
+  gap: calc(var(--spacing-unit) * 2.5); /* 40px */
+}
+
+.service-card {
+  background-color: var(--color-white);
+  padding: calc(var(--spacing-unit) * 2); /* 32px */
+  border-radius: var(--border-radius-medium); /* 8px */
+  box-shadow: var(--shadow-elevation-1);
+  transition: var(--transition-medium);
+  display: flex;
+  flex-direction: column; /* Para alinear el precio al final */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-elevation-2);
+}
+
+.service-card h3 {
+  font-size: 1.3rem; /* ~21px */
+  color: var(--color-text-dark);
+  margin-top: 0; /* Quitar margen superior del h3 dentro de la card */
+  margin-bottom: calc(var(--spacing-unit) * 0.8); /* 12px */
+}
+
+.service-card p {
+  font-size: 0.95rem; /* ~15px */
+  color: var(--color-text-light);
+  flex-grow: 1; /* El párrafo de descripción crece */
+  margin-bottom: var(--spacing-unit); /* 16px */
+}
+
+.service-card .service-price {
+  font-family: var(--font-secondary);
+  font-weight: 600;
+  color: var(--color-primary-accent);
+  font-size: 1.1rem; /* ~17px */
+  margin-top: auto; /* Empuja el precio al final de la card */
+  padding-top: var(--spacing-unit); /* 16px */
+  border-top: 1px solid var(--color-border-light); /* Línea separadora sutil */
+  text-align: center;
+  margin-bottom: 0; /* Quitar margen inferior del precio */
+}
+
+/* ==========================================================================
+   10. Sección Galería (.gallery-section)
+   ========================================================================== */
+
+.gallery-section .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Ajustar tamaño mínimo */
+  gap: calc(var(--spacing-unit) * 1.5); /* 24px */
+}
+
+.gallery-item {
+  border-radius: var(--border-radius-medium); /* 8px */
+  overflow: hidden;
+  box-shadow: var(--shadow-elevation-1);
+  transition: var(--transition-medium);
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-elevation-2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 250px; /* Altura fija para las imágenes de galería */
+  object-fit: cover;
+}
+
+.gallery-item figcaption {
+  padding: var(--spacing-unit); /* 16px */
+  text-align: center;
+  font-size: 0.9rem; /* ~14px */
+  color: var(--color-text-light);
+  background-color: var(--color-white); /* Fondo para el caption */
+  border-top: 1px solid var(--color-border-light); /* Separador sutil */
+}
+
+/* ==========================================================================
+   11. Sección Contacto (.contact-section)
+   ========================================================================== */
+.contact-section {
+  background-color: var(--color-background-light); /* Fondo distintivo */
+}
+
+.contact-section .contact-content-wrapper {
+  max-width: 800px; /* Limitar ancho del contenido de contacto */
+  margin: 0 auto; /* Centrar */
+  background-color: var(--color-white);
+  padding: calc(var(--spacing-unit) * 3); /* 48px */
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--shadow-elevation-2);
+}
+
+.contact-section .contact-intro h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: calc(var(--spacing-unit) * 0.5); /* 8px */
+}
+
+.contact-section .contact-intro p {
+  text-align: center;
+  margin-bottom: calc(var(--spacing-unit) * 2); /* 32px */
+}
+
+.contact-section .contact-actions {
+  display: flex;
+  flex-direction: column; /* Apilar botones en móvil por defecto */
+  gap: var(--spacing-unit) * 1.5; /* 24px */
+  align-items: center; /* Centrar botones */
+  margin-bottom: calc(var(--spacing-unit) * 2.5); /* 40px */
+}
+
+.contact-section .btn-contact {
+  width: 100%; /* Ancho completo en móvil */
+  max-width: 320px; /* Ancho máximo para los botones */
+}
+
+.contact-section .contact-details h4 {
+  text-align: center;
+  color: var(--color-text-dark);
+  margin-top: calc(var(--spacing-unit) * 2); /* 32px */
+  margin-bottom: var(--spacing-unit) * 1.5; /* 24px */
+  padding-top: calc(var(--spacing-unit) * 1.5); /* 24px */
+  border-top: 1px solid var(--color-border-light);
+}
+
+.contact-section .contact-details ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.contact-section .contact-details li {
+  margin-bottom: var(--spacing-unit); /* 16px */
+  color: var(--color-text-light);
+}
+
+.contact-section .contact-details li strong {
+  color: var(--color-text-dark);
+  font-weight: 600;
+  display: block;
+  margin-bottom: calc(var(--spacing-unit) * 0.25); /* 4px */
+}
+
+/* ==========================================================================
+   12. Pie de Página (.site-footer)
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--color-text-dark); /* Footer oscuro */
+  color: var(--color-background-light); /* Texto claro en footer */
+  padding: calc(var(--spacing-unit) * 2.5) 0; /* 40px padding vertical */
+  text-align: center;
+}
+
+.site-footer p {
+  margin-bottom: calc(var(--spacing-unit) * 0.5); /* 8px */
+  font-size: 0.9rem; /* ~14px */
+  color: var(--color-grey-medium); /* Ajustar color para legibilidad en fondo oscuro */
+}
+
+.site-footer a {
+  color: var(--color-primary-accent); /* Enlaces en el footer con color de acento */
+}
+
+.site-footer a:hover {
+  color: var(--color-primary-accent-darker);
+}
+
+/* ==========================================================================
+   13. Media Queries para Responsividad
+   ========================================================================== */
+
+/* Tablets y dispositivos medianos (ej. iPads en landscape) */
+@media (min-width: 768px) {
+  .site-header .header-container {
+    flex-direction: row; /* Logo a la izq, nav a la der */
+  }
+
+  .hero-section .hero-content-column .container {
+     text-align: left; /* Alinear texto a la izquierda en desktop */
+  }
+
+  .about-section .about-content {
+    flex-direction: row; /* Imagen y texto en fila */
+  }
+
+  .contact-section .contact-actions {
+    flex-direction: row; /* Botones de contacto en fila */
+    justify-content: center;
+  }
+  .contact-section .btn-contact {
+    width: auto; /* Ancho automático para botones en fila */
+  }
+}
+
+/* Dispositivos móviles (ej. smartphones en portrait y landscape) */
+@media (max-width: 767px) {
+  .site-header {
+    position: static; /* Header no fijo en móviles para no ocupar espacio */
+  }
+  .site-header .header-container {
+    flex-direction: column; /* Apilar logo y nav */
+    gap: var(--spacing-unit);
+  }
+
+  .site-header .main-nav ul {
+    justify-content: center; /* Centrar nav items */
+    gap: var(--spacing-unit) * 1.5; /* Espacio ajustado para móvil */
+  }
+  .site-header .main-nav ul li{
+   padding-right:6px;
+}
+  .hero-section {
+    flex-direction: column; /* Apilar imagen y contenido */
+    min-height: auto; /* Altura automática */
+  }
+
+  .hero-section .hero-image-column {
+    flex-basis: auto;
+    height: 300px; /* Altura fija para la imagen hero en móvil */
+    width: 100%;
+  }
+
+  .hero-section .hero-content-column {
+    flex-basis: auto;
+    padding: calc(var(--spacing-unit) * 2); /* Padding reducido */
+    text-align: center; /* Centrar texto en móvil */
+  }
+  .hero-section .hero-content-column .container {
+    padding-left: var(--spacing-unit);
+    padding-right: var(--spacing-unit);
+  }
+
+  .hero-section .hero-content-column h1 {
+    font-size: calc(var(--font-size-h1) * 0.8); /* Título hero más pequeño */
+  }
+
+  .about-section .about-content {
+    flex-direction: column; /* Apilar imagen y texto */
+    text-align: center;
+  }
+
+  .about-section .about-image {
+    margin-bottom: var(--spacing-unit) * 1.5; /* Espacio debajo de la imagen de perfil */
+    width: 200px; /* Imagen de perfil más pequeña */
+    height: 200px;
+  }
+
+  .services-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Una sola columna en móviles */
+    gap: var(--spacing-unit) * 1.5; /* Espacio reducido */
+  }
+
+  .site-main section {
+    padding-top: calc(var(--spacing-unit) * 3);
+    padding-bottom: calc(var(--spacing-unit) * 3);
+  }
+  .site-main section > h2 {
+    margin-bottom: calc(var(--spacing-unit) * 2);
+  }
+
+  .contact-section .contact-content-wrapper {
+    padding: calc(var(--spacing-unit) * 2);
+  }
+}
