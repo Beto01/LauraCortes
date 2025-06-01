@@ -588,7 +588,9 @@ p {
     justify-content: center; /* Centrar nav items */
     gap: var(--spacing-unit) * 1.5; /* Espacio ajustado para móvil */
   }
-
+  .site-header .main-nav ul li{
+   padding-right:6px;
+}
   .hero-section {
     flex-direction: column; /* Apilar imagen y contenido */
     min-height: auto; /* Altura automática */
